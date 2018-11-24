@@ -1,0 +1,14 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const taskSchema = new Schema({
+  task: { type: String, required: true },
+  description: { type: String },
+  assignment: { type: [String], required: true },
+  dateAssigned: { type: String, required: true },
+  completed: { type: Boolean, required: true },
+});
+
+const Task = mongoose.model("Task", taskSchema);
+
+module.exports = Task;
